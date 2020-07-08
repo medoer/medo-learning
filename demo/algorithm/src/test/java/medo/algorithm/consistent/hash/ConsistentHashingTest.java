@@ -10,7 +10,7 @@ import medo.algorithm.hash.consistent.MyServiceNode;
 public class ConsistentHashingTest {
 
     @Test
-    public void test() {
+    public void testConsistentHashing() {
         // initialize 4 service node
         MyServiceNode node1 = new MyServiceNode("IDC1", "127.0.0.1", 8080);
         MyServiceNode node2 = new MyServiceNode("IDC1", "127.0.0.1", 8081);
