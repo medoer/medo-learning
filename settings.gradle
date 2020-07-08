@@ -1,0 +1,6 @@
+rootProject.name = "medo-learning"
+
+include "demo"
+include "demo:java-demo"
+include "demo:algorithm"
+include "demo:design-pattern"
