@@ -12,9 +12,9 @@ import org.junit.Test;
  * @author bryce
  *
  */
-public class QueueTest {
+public class QueueWithStackTest {
 
-    Queue<Integer> queue = new LinkedQueue<>();
+    Queue<Integer> queue = new QueueWithStack<>();
 
     @Test
     public void testEmptyQueue() {

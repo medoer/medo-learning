@@ -1,6 +1,9 @@
 package medo.datastructure.stack;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertThrows;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -9,9 +12,9 @@ import org.junit.Test;
  * @author bryce
  *
  */
-public class StackTest {
+public class StackWithQueueTest {
 
-    private Stack<Integer> stack = new ListStack<>();
+    private Stack<Integer> stack = new StackWithQueue<>();
 
     @Test
     public void testEmptyStack() {
