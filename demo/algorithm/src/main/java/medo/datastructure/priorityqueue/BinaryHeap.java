@@ -34,6 +34,7 @@ public class BinaryHeap<E extends Comparable<E>> implements PriorityQueue<E> {
             mapAdd(elems[i], i);
             heapList.add(elems[i]);
         }
+        // 折半查找
         for (int i = Math.max(0, (heapSize / 2) - 1); i >= 0; i--) {
             sink(i);
         }
@@ -181,6 +182,7 @@ public class BinaryHeap<E extends Comparable<E>> implements PriorityQueue<E> {
         heapList.set(i, eJ);
         mapSwap(eI, eJ, i, j);
     }
+
     private void swim(int k) {
         int parent = (k - 1) / 2;
         while (k > 0 && less(k, parent)) {
