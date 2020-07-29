@@ -18,10 +18,9 @@ public class TestReport extends BaseTestReport {
     @Override
     public void calResult(List<Future<BaseResponse>> results) {
 
-        // 取出每次的请求的响应时间
         List<Long> list = new ArrayList<>();
-        try{
-            for (Future<BaseResponse> item: results) {
+        try {
+            for (Future<BaseResponse> item : results) {
                 BaseResponse result = item.get();
                 list.add(result.getResponseTime());
             }
@@ -29,12 +28,12 @@ public class TestReport extends BaseTestReport {
             ignored.printStackTrace();
         }
 
-
         // 按大小排序
-        list.sort(Comparator.comparingLong(Long:: longValue));
+        list.sort(Comparator.comparingLong(Long::longValue));
 
         // 求 95% 响应时间 序号
-        int ninetyFiveRT = BigDecimal.valueOf(numberOfTests).multiply(BigDecimal.valueOf(0.95D)).setScale(0, BigDecimal.ROUND_UP).intValue();
+        int ninetyFiveRT = BigDecimal.valueOf(numberOfTests).multiply(BigDecimal.valueOf(0.95D))
+                .setScale(0, BigDecimal.ROUND_UP).intValue();
 
         // 求 平均响应时间
         double avgRt = list.stream().mapToLong(Long::longValue).average().getAsDouble();

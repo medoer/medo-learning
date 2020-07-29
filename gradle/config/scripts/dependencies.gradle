@@ -10,6 +10,7 @@ ext {
     mybatisPlusVersion = '3.3.1'
     seataVersion = '2.2.0.RELEASE'
     springCloudVersion = "Greenwich.RELEASE"
+    springVersion = "5.2.8.RELEASE"
 }
 
 dependencyManagement {
@@ -23,6 +24,8 @@ dependencyManagement {
         dependency "com.baomidou:mybatis-plus-boot-starter:${mybatisPlusVersion}"
         dependency "com.baomidou:mybatis-plus-extension:${mybatisPlusVersion}"
         dependency "com.alibaba.cloud:spring-cloud-starter-alibaba-seata:${seataVersion}"
+        dependency "org.springframework:spring-context:${springVersion}"
+        dependency "org.springframework:spring-tx:${springVersion}"
         
     }
     imports {

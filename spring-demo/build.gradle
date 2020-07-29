@@ -1,0 +1,6 @@
+subprojects {
+    dependencies {
+        implementation "org.apache.commons:commons-lang3"
+        testImplementation "junit:junit"
+    }
+}
