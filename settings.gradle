@@ -7,3 +7,4 @@ include "demo:design-pattern"
 
 include "spring-demo"
 include "spring-demo:spring-transactional"
+include "spring-demo:spring-kafka"

@@ -26,7 +26,6 @@ dependencyManagement {
         dependency "com.alibaba.cloud:spring-cloud-starter-alibaba-seata:${seataVersion}"
         dependency "org.springframework:spring-context:${springVersion}"
         dependency "org.springframework:spring-tx:${springVersion}"
-        
     }
     imports {
         //spring bom helps us to declare dependencies without specifying config numbers.
