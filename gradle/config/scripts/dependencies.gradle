@@ -13,6 +13,10 @@ ext {
     springVersion = "5.2.8.RELEASE"
 }
 
+// java.lang.BootstrapMethodError: java.la ng.NoClassDefFoundError: 
+//org/junit/platform/engine/EngineDiscoveryListener
+ext['junit-jupiter.version'] = '5.6.0'
+了
 dependencyManagement {
     dependencies {
         dependency "org.apache.commons:commons-lang3:${commonsLang3Version}"
