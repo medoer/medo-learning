@@ -22,7 +22,6 @@ public class DecoratorFactory {
         for (Decorator decorator : decorators.subList(1, decorators.size())) {
             builder = builder.andThen(decorator);
         }
-
         DecoratorChain chain = builder.andFinally((param) -> {
             Entity entity = param.getEntity();
             try {
@@ -31,6 +30,7 @@ public class DecoratorFactory {
                 throw e;
             }
         });
+        // 创建一个 Functional 对象 (param) -> { chain.invokeNext(param);};
         return chain::invokeNext;
     }
 }
