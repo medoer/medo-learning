@@ -6,7 +6,6 @@ import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 
-import medo.algorithm.ThreeSum;
 import medo.algorithm.basic.ThreeSumIterate;
 import medo.algorithm.hash.ThreeSumHashSet;
 import medo.algorithm.ohter.ThreeSumTwoPointer;
@@ -30,10 +29,9 @@ public class ThreeSumTest {
         ThreeSum threeSum = new ThreeSumIterate();
         int[] nums = new int[] { -1, 0, 1, 2, -1, -4 };
         List<List<Integer>> result = threeSum.run(nums);
-        Assert.assertTrue(result.contains(Arrays.asList(-1, 0, 1))
-                && result.contains(Arrays.asList(-1, -1, 2)));
+        Assert.assertTrue(result.contains(Arrays.asList(-1, 0, 1)) && result.contains(Arrays.asList(-1, -1, 2)));
         // not found
-        List<List<Integer>> result2 = threeSum.run(new int[] {1, 2, 3});
+        List<List<Integer>> result2 = threeSum.run(new int[] { 1, 2, 3 });
         Assert.assertTrue(result2.isEmpty());
     }
 
@@ -42,22 +40,24 @@ public class ThreeSumTest {
         ThreeSum threeSum = new ThreeSumHashSet();
         int[] nums = new int[] { -1, 0, 1, 2, -1, -4 };
         List<List<Integer>> result = threeSum.run(nums);
-        Assert.assertTrue(result.contains(Arrays.asList(-1, 0, 1))
-                && result.contains(Arrays.asList(-1, -1, 2)));
+        Assert.assertTrue(result.contains(Arrays.asList(-1, 0, 1)) && result.contains(Arrays.asList(-1, -1, 2)));
         // not found
-        List<List<Integer>> result2 = threeSum.run(new int[] {1, 2, 3});
+        List<List<Integer>> result2 = threeSum.run(new int[] { 1, 2, 3 });
         Assert.assertTrue(result2.isEmpty());
+        List<List<Integer>> result3 = threeSum.run(new int[] { 1, 1, -2 });
+        Assert.assertTrue(result3.contains(Arrays.asList(-2, 1, 1)));
+        List<List<Integer>> result4 = threeSum.run(new int[] { 1, 2, -2, -1 });
+        Assert.assertTrue(result4.isEmpty());
     }
-    
+
     @Test
     public void testTwoPointer() {
         ThreeSum threeSum = new ThreeSumTwoPointer();
         int[] nums = new int[] { -1, 0, 1, 2, -1, -4 };
         List<List<Integer>> result = threeSum.run(nums);
-        Assert.assertTrue(result.contains(Arrays.asList(-1, 0, 1))
-                && result.contains(Arrays.asList(-1, -1, 2)));
+        Assert.assertTrue(result.contains(Arrays.asList(-1, 0, 1)) && result.contains(Arrays.asList(-1, -1, 2)));
         // not found
-        List<List<Integer>> result2 = threeSum.run(new int[] {1, 2, 3});
+        List<List<Integer>> result2 = threeSum.run(new int[] { 1, 2, 3 });
         Assert.assertTrue(result2.isEmpty());
     }
 

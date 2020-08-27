@@ -5,7 +5,7 @@ import java.util.Map;
 
 import medo.algorithm.TwoSum;
 
-public class TwoSumHashMap implements TwoSum{
+public class TwoSumHashMap implements TwoSum {
 
     @Override
     public int[] run(int[] nums, int target) {
