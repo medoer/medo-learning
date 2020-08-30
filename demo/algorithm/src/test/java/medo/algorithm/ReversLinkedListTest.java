@@ -14,9 +14,10 @@ public class ReversLinkedListTest {
         ReverseLinkedList.ListNode head = new ListNode(1);
         ReverseLinkedList.ListNode listNode2 = new ListNode(2);
         head.next = listNode2;
+        listNode2.next = new ListNode(3);
         ListNode run = list.run(head);
-        Assert.assertTrue(run.val == 2);
-        Assert.assertTrue(run.next.val == 1);
+        Assert.assertTrue(run.val == 3);
+        Assert.assertTrue(run.next.val == 2);
     }
 
 }

@@ -1,11 +1,14 @@
 package medo.datastructure.linkedlist;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import org.junit.*;
+
+import org.junit.Before;
+import org.junit.Test;
 
 /**
  * 
@@ -19,7 +22,7 @@ public class LinkedListTest {
     private static final int NUM_NULLS = TEST_SZ / 5;
     private static final int MAX_RAND_NUM = 250;
 
-    DoublyLinkedList<Integer> list;
+    LinkedList<Integer> list;
 
     @Before
     public void setup() {

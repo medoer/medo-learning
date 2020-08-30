@@ -170,7 +170,6 @@ public class DoublyLinkedList<E> implements LinkedList<E> {
                 }
             }
         }
-      
         return false;
     }
 
