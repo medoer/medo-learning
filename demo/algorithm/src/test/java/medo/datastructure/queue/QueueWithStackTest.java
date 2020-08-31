@@ -68,5 +68,10 @@ public class QueueWithStackTest {
         assertEquals(2, (int) queue.poll());
         assertEquals(queue.size(), 0);
         assertTrue(queue.isEmpty());
+        queue.offer(1);
+        queue.offer(2);
+        queue.poll();
+        queue.offer(3);
+        assertEquals(2, (int)queue.peek());
     }
 }

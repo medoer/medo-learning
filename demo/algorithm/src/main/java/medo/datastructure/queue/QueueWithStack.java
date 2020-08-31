@@ -2,32 +2,45 @@ package medo.datastructure.queue;
 
 import java.util.Iterator;
 
-import medo.datastructure.stack.ListStack;
 import medo.datastructure.stack.Stack;
+import medo.datastructure.stack.StackImpl;
 
-/**
- * 基于栈的队列。
- * 
- * @author bryce
- *
- * @param <E>
- */
-public class QueueWithStack<E> implements Queue<E> {
+public class QueueWithStack<T> implements Queue<T> {
 
-    private Stack<E> stackIn = new ListStack<>();
-
-    private Stack<E> stackOut = new ListStack<>();
+    private Stack<T> inStack;
+    private Stack<T> outStack;
 
     public QueueWithStack() {
+        this.inStack = new StackImpl<>();
+        this.outStack = new StackImpl<>();
     }
 
-    public QueueWithStack(E elem) {
-        offer(elem);
+    @Override
+    public Iterator<T> iterator() {
+        return new Iterator<T>() {
+
+            @Override
+            public boolean hasNext() {
+                return inStack.size() > 0 || outStack.size() > 0;
+            }
+
+            @Override
+            public T next() {
+                if (!outStack.isEmpty()) {
+                    return outStack.pop();
+                } else if (!inStack.isEmpty()) {
+                    outStack.push(inStack.pop());
+                    return outStack.pop();
+                }
+                throw new RuntimeException();
+            }
+
+        };
     }
 
     @Override
     public int size() {
-        return stackIn.size() + stackOut.size();
+        return outStack.size() + inStack.size();
     }
 
     @Override
@@ -36,37 +49,36 @@ public class QueueWithStack<E> implements Queue<E> {
     }
 
     @Override
-    public E peek() {
-        if (isEmpty()) {
-            throw new RuntimeException("Queue is empty");
+    public T peek() {
+        if (!outStack.isEmpty()) {
+            return outStack.peek();
         }
-        while (!stackIn.isEmpty()) {
-            stackOut.push(stackIn.pop());
+        if (!inStack.isEmpty()) {
+            while (!inStack.isEmpty()) {
+                outStack.push(inStack.pop());
+            }
+            return outStack.peek();
         }
-        return stackOut.peek();
+        throw new RuntimeException();
     }
 
     @Override
-    public E poll() {
-        if (isEmpty()) {
-            throw new RuntimeException("Queue is empty");
+    public T poll() {
+        if (!outStack.isEmpty()) {
+            return outStack.pop();
         }
-        while (!stackIn.isEmpty()) {
-            stackOut.push(stackIn.pop());
+        if (!inStack.isEmpty()) {
+            while (!inStack.isEmpty()) {
+                outStack.push(inStack.pop());
+            }
+            return outStack.pop();
         }
-        return stackOut.pop();
+        throw new RuntimeException();
     }
 
     @Override
-    public void offer(E elem) {
-        stackIn.push(elem);
+    public void offer(T elem) {
+        inStack.push(elem);
     }
 
-    @Override
-    public Iterator<E> iterator() {
-        while (!stackIn.isEmpty()) {
-            stackOut.push(stackIn.pop());
-        }
-        return stackOut.iterator();
-    }
 }
