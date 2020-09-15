@@ -6,13 +6,12 @@ public class SwapReverseLinkedList implements ReverseLinkedList {
 
     @Override
     public ListNode run(ListNode head) {
-        ListNode current = head;
         ListNode result = null;
-        while (current != null) {
-            ListNode next = current.next;
-            current.next = result;
-            result = current;
-            current = next;
+        while (head != null) {
+            ListNode next = head.next;
+            head.next = result;
+            result = head;
+            head = next;
         }
         return result;
     }

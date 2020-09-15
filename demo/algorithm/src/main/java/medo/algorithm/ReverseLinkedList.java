@@ -15,6 +15,7 @@ public interface ReverseLinkedList {
         ListNode(int x) {
             val = x;
         }
+
     }
 
     ListNode run(ListNode head);
