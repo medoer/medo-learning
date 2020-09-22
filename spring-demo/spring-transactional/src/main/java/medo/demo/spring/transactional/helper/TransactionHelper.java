@@ -40,4 +40,12 @@ public class TransactionHelper<T, R> {
         runnable.run();
     }
 
+    public static void main(String[] args) {
+        TransactionHelper<Integer, String> helper = new TransactionHelper<>();
+        String ss = helper.required((p) -> {
+            System.out.println(p);
+            return "2";
+        }, 1);
+        System.out.println(ss);
+    }
 }

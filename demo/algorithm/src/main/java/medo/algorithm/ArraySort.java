@@ -6,8 +6,8 @@ package medo.algorithm;
  * @author bryce
  *
  */
-public interface BinarySearch {
+public interface ArraySort {
 
-    int run(int[] datas, int search);
+    int[] run(int[] datas);
 
 }

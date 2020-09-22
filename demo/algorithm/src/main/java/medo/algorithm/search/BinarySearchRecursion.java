@@ -1,8 +1,8 @@
-package medo.algorithm.recursion;
+package medo.algorithm.search;
 
 import java.util.Arrays;
 
-import medo.algorithm.BinarySearch;
+import medo.algorithm.ArraySearch;
 
 /**
  * 1. 排序
@@ -12,7 +12,7 @@ import medo.algorithm.BinarySearch;
  * @author: bryce
  * @date: 2020-09-21
  */
-public class BinarySearchRecursion implements BinarySearch{
+public class BinarySearchRecursion implements ArraySearch{
 
     @Override
     public int run(int[] datas, int search) {
