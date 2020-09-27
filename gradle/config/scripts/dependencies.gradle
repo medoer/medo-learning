@@ -8,6 +8,7 @@ ext {
     lombokVersion = "1.18.4"
     mariadbJavaClientVersion = '2.1.2'
     mybatisPlusVersion = '3.3.1'
+    rxjavaVersion = '3.0.6'
     seataVersion = '2.2.0.RELEASE'
     springCloudVersion = "Greenwich.RELEASE"
     springVersion = "5.2.8.RELEASE"
@@ -27,6 +28,7 @@ dependencyManagement {
         dependency "org.mariadb.jdbc:mariadb-java-client:${mariadbJavaClientVersion}"
         dependency "com.baomidou:mybatis-plus-boot-starter:${mybatisPlusVersion}"
         dependency "com.baomidou:mybatis-plus-extension:${mybatisPlusVersion}"
+        dependency "io.reactivex.rxjava3:rxjava:${rxjavaVersion}"
         dependency "com.alibaba.cloud:spring-cloud-starter-alibaba-seata:${seataVersion}"
         dependency "org.springframework:spring-context:${springVersion}"
         dependency "org.springframework:spring-tx:${springVersion}"
