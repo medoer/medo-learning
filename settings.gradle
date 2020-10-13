@@ -10,6 +10,7 @@ include "spring-demo:spring-transactional"
 include "spring-demo:spring-kafka"
 include "spring-demo:spring-unit-test"
 include "spring-demo:spring-context"
+include "spring-demo:spring-core"
 
 include "domain-demo"
 include "domain-demo:domain-common-demo"

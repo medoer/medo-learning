@@ -1,4 +1,4 @@
-package medo.demo.spring.transactional.helper;
+package medo.demo.spring.core;
 
 import java.util.function.Consumer;
 import java.util.function.Function;

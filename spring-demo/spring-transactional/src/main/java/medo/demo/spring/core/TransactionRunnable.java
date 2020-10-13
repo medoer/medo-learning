@@ -1,4 +1,4 @@
-package medo.demo.spring.transactional.helper;
+package medo.demo.spring.core;
 
 @FunctionalInterface
 public interface TransactionRunnable {
