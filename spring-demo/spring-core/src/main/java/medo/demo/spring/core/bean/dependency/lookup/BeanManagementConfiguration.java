@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class BeanManagementConfiguration {
 
-    @Bean
+    @Bean()
     public SuperUser superUser() {
         return new SuperUser();
     }
