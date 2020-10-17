@@ -1,0 +1,7 @@
+description = "Spring Controller jar"
+
+bootJar.enabled = false
+jar.enabled = true
+
+dependencies {
+}

@@ -1,0 +1,7 @@
+description = "Spring MVC test"
+
+dependencies {
+
+    implementation project(":spring-demo:spring-web:spring-controller-jar")
+
+}
