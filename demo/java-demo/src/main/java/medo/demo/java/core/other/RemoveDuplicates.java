@@ -1,6 +1,7 @@
 package medo.demo.java.core.other;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -26,6 +27,17 @@ public class RemoveDuplicates {
     public boolean isRepeat(List<Domain> domains) {
         Set<String> collect = domains.stream().map(Domain::getName).collect(Collectors.toSet());
         return domains.size() != collect.size();
+    }
+
+    public boolean isRepeat2(List<Domain> domains) {
+        Set<String> cache = new HashSet<>();
+        for (int i = 0; i < domains.size(); i++) {
+            if (cache.contains(domains.get(i).getName())) {
+                return true;
+            }
+            cache.add(domains.get(i).getName());
+        }
+        return false;
     }
 
     public static class Domain {
