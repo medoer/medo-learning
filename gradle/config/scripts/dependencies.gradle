@@ -12,6 +12,7 @@ ext {
     seataVersion = '2.2.0.RELEASE'
     springCloudVersion = "Greenwich.RELEASE"
     springVersion = "5.2.8.RELEASE"
+    hibernateValidatorVersion = "6.1.6.Final"
 }
 
 // java.lang.BootstrapMethodError: java.la ng.NoClassDefFoundError: 
@@ -26,13 +27,17 @@ dependencyManagement {
         dependency "junit:junit:${junitVersion}"
         dependency "org.projectlombok:lombok:${lombokVersion}"
         dependency "org.mariadb.jdbc:mariadb-java-client:${mariadbJavaClientVersion}"
+        // hibernate validator dependence jakarta api
+        dependency "org.hibernate.validator:hibernate-validator:${hibernateValidatorVersion}"
         dependency "com.baomidou:mybatis-plus-boot-starter:${mybatisPlusVersion}"
         dependency "com.baomidou:mybatis-plus-extension:${mybatisPlusVersion}"
         dependency "io.reactivex.rxjava3:rxjava:${rxjavaVersion}"
         dependency "com.alibaba.cloud:spring-cloud-starter-alibaba-seata:${seataVersion}"
         dependency "org.springframework:spring-context:${springVersion}"
         dependency "org.springframework:spring-tx:${springVersion}"
+
     }
+
     imports {
         //spring bom helps us to declare dependencies without specifying config numbers.
         mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"

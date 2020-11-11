@@ -1,4 +1,6 @@
 
 dependencies {
-    compile "org.apache.httpcomponents:httpclient"
+    implementation "org.apache.httpcomponents:httpclient"
+    implementation "jakarta.validation:jakarta.validation-api"
+    implementation "org.hibernate.validator:hibernate-validator"
 }
